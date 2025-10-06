@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Mail, FileText, Code2 } from 'lucide-react';
-import samarcv from "../../assets/samarcv.pdf;
+import samarcv from "../../assets/samarcv.pdf";
 
 export const Hero = () => {
   return (
