@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { Mail, Linkedin, Code2 } from 'lucide-react';
+import { Mail, FileText, Code2 } from 'lucide-react';
 
 export const Hero = () => {
   return (
@@ -48,9 +48,9 @@ export const Hero = () => {
             className="border-primary text-primary hover:bg-primary hover:text-background font-semibold"
             asChild
           >
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-              <Linkedin className="mr-2 h-5 w-5" />
-              LinkedIn
+            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+              <FileText className="mr-2 h-5 w-5" />
+              Resume
             </a>
           </Button>
         </div>
