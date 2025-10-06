@@ -1,6 +1,5 @@
 import { Button } from '@/components/ui/button';
 import { Mail, FileText, Code2 } from 'lucide-react';
-import samarcv from "../../assets/samarcv.pdf";
 
 export const Hero = () => {
   return (
@@ -49,7 +48,7 @@ export const Hero = () => {
             className="border-primary text-primary hover:bg-primary hover:text-background font-semibold"
             asChild
           >
-            <a href={samarcv} target="_blank" rel="noopener noreferrer">
+            <a href="../assets/samarcv.pdf" target="_blank" rel="noopener noreferrer">
               <FileText className="mr-2 h-5 w-5" />
               Resume
             </a>
@@ -58,7 +57,7 @@ export const Hero = () => {
 
         {/* Skills */}
         <div className="flex flex-wrap justify-center gap-2 pt-6">
-          {['AI', 'Web Dev', 'Content', 'Open Source'].map((skill) => (
+          {['AI', 'Web Dev', 'MERN', 'Open Source'].map((skill) => (
             <span
               key={skill}
               className="px-3 py-1 border border-primary/30 rounded-full text-sm text-foreground"
