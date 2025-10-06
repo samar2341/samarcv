@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Mail, FileText, Code2 } from 'lucide-react';
+import samarcv from "../../assets/samarcv.pdf;
 
 export const Hero = () => {
   return (
@@ -48,7 +49,7 @@ export const Hero = () => {
             className="border-primary text-primary hover:bg-primary hover:text-background font-semibold"
             asChild
           >
-            <a href="../../assets/samarcv.pdf" target="_blank" rel="noopener noreferrer">
+            <a href={samarcv} target="_blank" rel="noopener noreferrer">
               <FileText className="mr-2 h-5 w-5" />
               Resume
             </a>
