@@ -11,14 +11,14 @@ export const Hero = () => {
       <div className="absolute inset-0 overflow-hidden">
         {/* Cyan Glow */}
         <div className="absolute top-20 left-10 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary/15 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
         
         {/* Grid Pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(0,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,255,0.03)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
         
         {/* Accent Lines */}
         <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary to-transparent opacity-30"></div>
-        <div className="absolute bottom-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent to-transparent opacity-30"></div>
+        <div className="absolute bottom-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary to-transparent opacity-30"></div>
       </div>
 
       {/* Content */}
@@ -37,12 +37,12 @@ export const Hero = () => {
           {/* Main Heading */}
           <div className="space-y-4 animate-fade-in-up">
             <h1 className="text-7xl md:text-9xl font-bold tracking-tight">
-              <span className="bg-gradient-to-r from-primary via-foreground to-accent bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-primary via-foreground to-primary bg-clip-text text-transparent">
                 Samar
               </span>
             </h1>
             <div className="flex items-center justify-center gap-2">
-              <Sparkles className="w-5 h-5 text-accent animate-glow-pulse" />
+              <Sparkles className="w-5 h-5 text-primary animate-glow-pulse" />
               <p className="text-xl md:text-3xl text-primary font-semibold tracking-wide">
                 your another programmer
               </p>
@@ -54,7 +54,7 @@ export const Hero = () => {
           <div className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
             <p className="text-lg md:text-2xl text-foreground max-w-3xl mx-auto leading-relaxed font-light">
               Experienced fellow in the domain of{' '}
-              <span className="text-accent font-semibold">Content Creation</span>
+              <span className="text-primary font-semibold">Content Creation</span>
               {' '}and field of{' '}
               <span className="text-primary font-semibold">Tech</span>
               {' '}mostly in solutions!
@@ -68,7 +68,7 @@ export const Hero = () => {
           <div className="flex flex-wrap gap-4 justify-center pt-8 animate-fade-in" style={{ animationDelay: '0.4s' }}>
             <Button
               size="lg"
-              className="bg-accent text-foreground hover:bg-accent/90 shadow-[0_0_20px_rgba(255,0,0,0.3)] hover:shadow-[0_0_30px_rgba(255,0,0,0.5)] transition-all duration-300 font-semibold text-lg px-8"
+              className="bg-primary text-background hover:bg-primary/90 shadow-[0_0_20px_rgba(0,255,255,0.4)] hover:shadow-[0_0_30px_rgba(0,255,255,0.6)] transition-all duration-300 font-semibold text-lg px-8"
               asChild
             >
               <a href="mailto:samardotexe@gmail.com">

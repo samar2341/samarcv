@@ -30,7 +30,7 @@ export const Navigation = () => {
     >
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <a href="#home" className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent hover:opacity-80 transition-opacity">
+          <a href="#home" className="text-2xl font-bold text-primary hover:opacity-80 transition-opacity">
             Samar
           </a>
 
