@@ -29,7 +29,7 @@ export const Contact = () => {
               className="border-primary text-primary hover:bg-primary/10"
               asChild
             >
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://linkedin.com/in/samar2341" target="_blank" rel="noopener noreferrer">
                 <Linkedin className="mr-2 h-5 w-5" />
                 Connect on LinkedIn
               </a>
