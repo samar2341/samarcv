@@ -17,10 +17,10 @@ export const Hero = () => {
 
         {/* Name + Title */}
         <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-foreground">
-          Samar
+          hey samarr this side
         </h1>
         <p className="text-xl md:text-2xl text-muted-foreground font-medium">
-          Your another programmer
+          Your random friendly developer
         </p>
 
         {/* Description */}
@@ -49,7 +49,7 @@ export const Hero = () => {
             asChild
           >
             
-            <a href="../assets/samarcv.pdf" target="_blank" rel="noopener noreferrer">
+            <a href="/samarcv.pdf" target="_blank" rel="noopener noreferrer">
               <FileText className="mr-2 h-5 w-5" />
               Resume
             </a>
