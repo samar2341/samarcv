@@ -14,7 +14,7 @@ export const Hero = () => {
 
       <div className="max-w-5xl text-center space-y-8">
         {/* Name */}
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight">
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold">
           Samarr
         </h1>
 
