@@ -17,7 +17,7 @@ export const Hero = () => {
 
         {/* Name + Title */}
         <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-foreground">
-          hey samarr this side
+          samarr
         </h1>
         <p className="text-xl md:text-2xl text-muted-foreground font-medium">
           Your random friendly developer
