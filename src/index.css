@@ -48,6 +48,12 @@ All colors MUST be HSL.
 }
 
 @layer base {
+  body {
+    @apply font-sans;
+  }
+}
+
+@layer base {
   * {
     @apply border-border;
   }

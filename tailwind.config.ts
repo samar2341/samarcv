@@ -13,7 +13,7 @@ export default {
       },
     },
     fontFamily: {
-      sans: ['Inter', 'system-ui', 'sans-serif'],
+      sans: ['"Segoe UI"', 'system-ui', 'sans-serif'],
     },
     extend: {
       colors: {
