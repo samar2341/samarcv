@@ -1,3 +1,4 @@
+import { GraduationCap, Award, FileText } from 'lucide-react'
 import { useEffect, useState } from 'react'
 
 export const About = () => {
@@ -34,55 +35,60 @@ export const About = () => {
             About Me
           </span>
 
-          {/* Main heading */}
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8">
-            Building scalable systems
+            Full-stack developer
             <br />
-            <span className="bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent">
-              with AI & automation
+            <span className="bg-gradient-to-r from-primary via-emerald-300 to-sky-300 bg-clip-text text-transparent">
+              and content creator
             </span>
           </h2>
 
-          {/* Divider */}
           <div className="w-20 h-1 bg-gradient-to-r from-primary/50 to-primary mx-auto mb-12 rounded-full" />
 
-          {/* Main description */}
           <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
             <p>
-              I'm a backend engineer and product builder from India, currently studying at 
+              I'm Samar Ali Ansari, a full-stack developer and content creator from India,
+              currently pursuing a <span className="text-foreground font-semibold">Bachelor's in Computer Applications</span> at
               <span className="text-foreground font-semibold"> Graphic Era Hill University</span>.
-              I'm passionate about building scalable systems, integrating AI workflows, 
-              and creating products that solve real problems.
+              I enjoy building dynamic web applications, creating useful content, and learning
+              by shipping real work.
             </p>
 
-            <div className="grid md:grid-cols-2 gap-8 mt-8">
-              <div className="p-6 rounded-2xl border border-primary/20 bg-primary/5 backdrop-blur-sm hover:border-primary/40 transition-all duration-300">
-                <h3 className="text-primary font-semibold mb-3">Current Work</h3>
+            <div className="grid md:grid-cols-3 gap-5 mt-8 text-left">
+              <div className="p-6 rounded-md border border-primary/20 bg-primary/5 backdrop-blur-sm hover:border-primary/40 transition-all duration-300">
+                <GraduationCap className="mb-4 h-6 w-6 text-primary" />
+                <h3 className="text-primary font-semibold mb-3">Education</h3>
                 <p className="text-sm text-muted-foreground">
-                  Backend Engineer Intern at <span className="text-foreground font-semibold">Gaprio Labs</span>, 
-                  building scalable APIs and AI integration workflows.
+                  Graphic Era Hill University, Bachelor&apos;s in Computer Applications, 2025 - 2028.
                 </p>
               </div>
 
-              <div className="p-6 rounded-2xl border border-primary/20 bg-primary/5 backdrop-blur-sm hover:border-primary/40 transition-all duration-300">
-                <h3 className="text-primary font-semibold mb-3">Building</h3>
+              <div className="p-6 rounded-md border border-primary/20 bg-primary/5 backdrop-blur-sm hover:border-primary/40 transition-all duration-300">
+                <Award className="mb-4 h-6 w-6 text-primary" />
+                <h3 className="text-primary font-semibold mb-3">Certification</h3>
                 <p className="text-sm text-muted-foreground">
-                  Co-founder of <span className="text-foreground font-semibold">SEORA LABS</span> / <span className="text-foreground font-semibold">SEORA AI</span> - 
-                  AI-powered automation and product solutions.
+                  Full Stack Web Development certification from Udemy.
+                </p>
+              </div>
+
+              <div className="p-6 rounded-md border border-primary/20 bg-primary/5 backdrop-blur-sm hover:border-primary/40 transition-all duration-300">
+                <FileText className="mb-4 h-6 w-6 text-primary" />
+                <h3 className="text-primary font-semibold mb-3">Profile</h3>
+                <p className="text-sm text-muted-foreground">
+                  Web development, creative writing, research, video content, and community-focused work.
                 </p>
               </div>
             </div>
 
             <p className="mt-8">
-              I believe in clean, maintainable code, thoughtful architecture, and solving problems 
-              at scale. When I'm not coding, I'm exploring AI/ML, experimenting with backend technologies, 
-              or thinking about the next big idea.
+              My resume blends development and creative work: open-source contribution, content
+              research, content creation, and web development. That mix helps me build products
+              that are technically sound and easy for people to understand.
             </p>
           </div>
 
-          {/* Soft closing line */}
           <p className="mt-12 text-sm text-muted-foreground/70 italic">
-            Always learning. Always building. Always shipping.
+            Building useful products. Creating clear content. Growing with every project.
           </p>
 
         </div>

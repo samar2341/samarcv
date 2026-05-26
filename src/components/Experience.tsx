@@ -1,42 +1,49 @@
 import { Card } from '@/components/ui/card';
-import { Briefcase, Calendar, ArrowRight } from 'lucide-react';
+import { BriefcaseBusiness, CalendarDays, CheckCircle2, MapPin, Sparkles } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 const experiences = [
   {
     period: 'Current',
-    company: 'Gaprio Labs Private Limited',
-    title: 'Backend Engineer Intern',
-    description: 'Building scalable backend systems with AI integrations and RESTful APIs.',
+    company: 'GaprioLabs',
+    title: 'Backend Engineer',
+    type: 'Current role',
+    description:
+      'Building backend-ready product flows, polished interfaces, and automation-friendly features for real users.',
     highlights: [
-      'Designed and implemented scalable REST APIs for AI-powered features',
-      'Integrated AI/ML workflows into production systems',
-      'Optimized database queries and implemented caching strategies',
-      'Collaborated with frontend and product teams on system architecture',
+      'Developing clean, responsive product interfaces with reusable React components',
+      'Improving workflows with API-first thinking and practical backend structure',
+      'Shipping fast iterations, bug fixes, and production-ready interface details',
+      'Keeping features minimal, readable, and easy to maintain',
     ],
-    color: 'from-primary',
+    location: 'Remote',
   },
   {
-    period: 'Oct 2024 - Nov 2024',
-    company: 'Open Source',
-    title: 'GSSoC Contributor',
-    description: 'Contributed to open-source projects with focus on features and bug fixes.',
+    period: '2024',
+    company: 'GSSoC Contributor',
+    title: 'Open Source Contributor',
+    type: 'Open source',
+    description:
+      'Contributed to open-source projects while learning real collaboration workflows and production-style review habits.',
     highlights: [
-      'Implemented new features and bug fixes',
-      'Collaborated via Git, pull requests, and code reviews',
-      'Participated in open-source workflow and best practices',
+      'Submitted pull requests that improved functionality and fixed bugs',
+      'Worked with issue discussions, repository standards, and collaborative development practices',
     ],
-    color: 'from-purple-500',
+    location: 'Remote', 
   },
   {
-    period: 'Jan 2024 - Present',
-    title: 'Web Development & Content Creation',
-    points: [
-      'Built responsive websites using HTML, CSS, and JavaScript.',
-      'Created technical articles and tutorials.',
-      'Applied SEO best practices to improve visibility.',
+    period: '2024',
+    company: 'Web Development / Content Creation',
+    title: 'Freelance Web Developer & Content Creator',
+    type: 'Freelance',
+    description:
+      'Built responsive websites and created content that translated technical ideas into clear, useful learning material.',
+    highlights: [
+      'Designed and developed responsive websites with a focus on usability across devices',
+      'Created tutorials, research-backed content, and web development explainers for online audiences',
     ],
-  },
+    location: 'Remote',
+  }
 ];
 
 export const Experience = () => {
@@ -61,73 +68,78 @@ export const Experience = () => {
   }, [])
 
   return (
-    <section id="experience" className="py-32 relative bg-gradient-to-b from-background via-primary/5 to-background">
-      {/* Background glow */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute bottom-1/3 right-1/4 w-[500px] h-[500px] bg-primary/10 rounded-full filter blur-3xl opacity-50" />
-      </div>
-
+    <section id="experience" className="relative overflow-hidden py-28 bg-background">
+      <div
+        className="absolute inset-0 -z-10 opacity-40"
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)',
+          backgroundSize: '80px 80px',
+        }}
+      />
       <div className="container mx-auto px-4">
         <div className={`max-w-6xl mx-auto transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          {/* Header */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-14">
             <span className="inline-block text-xs uppercase tracking-widest text-primary font-semibold mb-4">
               Experience
             </span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-              Where I've built
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold">
+              Work that shaped
               <br />
-              <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-                scalable systems
+              <span className="bg-gradient-to-r from-primary via-emerald-300 to-sky-300 bg-clip-text text-transparent">
+                how I build
               </span>
             </h2>
+            <p className="mx-auto mt-5 max-w-2xl text-sm md:text-base text-muted-foreground">
+              A compact timeline of hands-on product work, open-source collaboration,
+              and content-led web development practice.
+            </p>
           </div>
 
-          {/* Timeline Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="mx-auto grid max-w-4xl gap-5">
             {experiences.map((exp, index) => (
               <Card
                 key={index}
-                className={`relative h-full p-6 bg-card/50 border border-primary/10 hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 backdrop-blur-sm group overflow-hidden`}
+                className="group relative overflow-hidden rounded-lg border border-white/10 bg-card/80 p-6 md:p-8 shadow-2xl shadow-black/30 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:bg-card"
               >
-                {/* Background gradient */}
-                <div className={`absolute inset-0 -z-10 opacity-0 group-hover:opacity-10 transition-opacity duration-300 bg-gradient-to-br ${exp.color} to-transparent`} />
+                <div className="absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-primary via-emerald-300 to-sky-300" />
 
-                {/* Content */}
-                <div className="space-y-4">
-                  {/* Header */}
-                  <div className="flex items-start justify-between">
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-2">
-                        <div className={`bg-gradient-to-br ${exp.color} to-transparent p-2 rounded-lg`}>
-                          <Briefcase className="h-4 w-4 text-white" />
-                        </div>
-                        <span className="text-xs font-semibold text-primary uppercase tracking-widest">
-                          {exp.period}
-                        </span>
+                <div className="grid gap-8 md:grid-cols-[0.95fr_1.35fr] md:items-start">
+                  <div>
+                    <div className="mb-5 flex items-center gap-3">
+                      <div className="inline-flex h-12 w-12 items-center justify-center rounded-md border border-primary/20 bg-primary/10">
+                        <BriefcaseBusiness className="h-6 w-6 text-primary" />
                       </div>
-                      <h3 className="text-lg font-bold mb-1">{exp.title}</h3>
-                      <p className="text-sm text-primary/80 font-medium">{exp.company}</p>
+                      <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-primary">
+                        <Sparkles className="h-3 w-3" />
+                        {exp.type}
+                      </span>
+                    </div>
+                    <h3 className="mt-3 text-2xl font-bold">{exp.title}</h3>
+                    <p className="mt-1 text-lg font-semibold text-foreground/80">{exp.company}</p>
+                    <div className="mt-4 flex flex-wrap gap-3 text-sm text-muted-foreground">
+                      <span className="inline-flex items-center gap-2">
+                        <CalendarDays className="h-4 w-4 text-primary/70" />
+                        {exp.period}
+                      </span>
+                      <span className="inline-flex items-center gap-2">
+                        <MapPin className="h-4 w-4 text-primary/70" />
+                        {exp.location}
+                      </span>
                     </div>
                   </div>
 
-                  {/* Divider */}
-                  <div className="w-12 h-0.5 bg-gradient-to-r from-primary/50 to-transparent" />
-
-                  {/* Description */}
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {exp.description}
-                  </p>
-
-                  {/* Highlights */}
-                  <ul className="space-y-2">
-                    {exp.highlights.map((point, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-xs text-muted-foreground">
-                        <ArrowRight className="h-3 w-3 text-primary/50 flex-shrink-0 mt-1" />
-                        <span>{point}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <div>
+                    <p className="text-base leading-relaxed text-muted-foreground">{exp.description}</p>
+                    <ul className="mt-6 grid gap-3">
+                      {exp.highlights.map((point, idx) => (
+                        <li key={idx} className="flex items-start gap-3 text-sm text-muted-foreground">
+                          <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
+                          <span>{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </Card>
             ))}

@@ -1,41 +1,41 @@
 import { useState, useEffect } from 'react'
-import { Code2, Database, Zap, Brain, GitBranch, Package } from 'lucide-react'
+import { Code2, Database, Zap, Brain, GitBranch, PenTool } from 'lucide-react'
 
 const skillCategories = [
   {
     name: 'Frontend',
     icon: Code2,
-    skills: ['React', 'TypeScript', 'Tailwind CSS', 'HTML/CSS', 'JavaScript', 'Framer Motion'],
+    skills: ['React', 'TypeScript', 'Tailwind CSS', 'HTML/CSS', 'JavaScript', 'Responsive UI'],
     color: 'from-blue-500',
   },
   {
     name: 'Backend',
     icon: Zap,
-    skills: ['Node.js', 'Express', 'FastAPI', 'Python', 'REST APIs', 'GraphQL'],
+    skills: ['Node.js', 'Express', 'REST APIs', 'Python', 'API Design', 'Auth Flows'],
     color: 'from-cyan-500',
   },
   {
-    name: 'Databases',
+    name: 'Data',
     icon: Database,
-    skills: ['PostgreSQL', 'MongoDB', 'Redis', 'SQL', 'Database Design'],
+    skills: ['MongoDB', 'PostgreSQL', 'SQL', 'Data Analysis', 'Data Visualisation'],
     color: 'from-green-500',
   },
   {
     name: 'AI/ML',
     icon: Brain,
-    skills: ['LLM Integration', 'AI Workflows', 'Automation', 'ML Basics', 'Prompt Engineering'],
+    skills: ['AI Basics', 'Machine Learning', 'LLM Integration', 'Automation', 'Prompt Engineering'],
     color: 'from-purple-500',
   },
   {
-    name: 'Tools & DevOps',
+    name: 'Tools',
     icon: GitBranch,
-    skills: ['Git/GitHub', 'Docker', 'Linux', 'AWS', 'Vercel', 'CI/CD'],
+    skills: ['Git/GitHub', 'Docker', 'Linux', 'Vercel', 'Open Source Workflow'],
     color: 'from-orange-500',
   },
   {
-    name: 'Languages',
-    icon: Package,
-    skills: ['JavaScript', 'TypeScript', 'Python', 'C/C++', 'SQL'],
+    name: 'Creative',
+    icon: PenTool,
+    skills: ['Content Creation', 'Research', 'Creative Writing', 'Video Editing', 'Community Management'],
     color: 'from-pink-500',
   },
 ]
@@ -146,8 +146,8 @@ export const Skills = () => {
           {/* Additional Info */}
           <div className="mt-16 p-8 rounded-2xl border border-primary/20 bg-primary/5 backdrop-blur-sm text-center">
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              I'm constantly learning and exploring new technologies, especially in the AI/ML space. 
-              My focus is on building scalable, maintainable systems with clean code and thoughtful architecture.
+              My strongest mix is full-stack development plus content thinking: I can build,
+              research, explain, polish, and promote a product with the same level of care.
             </p>
           </div>
         </div>

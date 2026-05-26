@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { Mail, Linkedin, Github, Twitter, ExternalLink } from 'lucide-react';
+import { Mail, Linkedin, Github, ExternalLink, Phone, FileText } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 export const Contact = () => {
@@ -28,13 +28,13 @@ export const Contact = () => {
       icon: Mail,
       label: 'Email',
       href: 'mailto:samardotexe@gmail.com',
-      color: 'from-red-500',
+      color: 'from-rose-500',
     },
     {
-      icon: Github,
-      label: 'GitHub',
-      href: 'https://github.com/samar2341',
-      color: 'from-gray-400',
+      icon: Phone,
+      label: 'Phone',
+      href: 'tel:+919997015785',
+      color: 'from-emerald-500',
     },
     {
       icon: Linkedin,
@@ -43,10 +43,10 @@ export const Contact = () => {
       color: 'from-blue-500',
     },
     {
-      icon: Twitter,
-      label: 'Twitter',
-      href: 'https://twitter.com',
-      color: 'from-cyan-500',
+      icon: Github,
+      label: 'GitHub',
+      href: 'https://github.com/samar2341',
+      color: 'from-zinc-400',
     },
   ]
 
@@ -77,8 +77,8 @@ export const Contact = () => {
           </h2>
 
           <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-12">
-            Whether you have a project in mind, want to collaborate, or just want to chat about tech, 
-            I'd love to hear from you. Let's create something meaningful together.
+            Whether you want to collaborate, discuss an internship, or review a product idea,
+            I&apos;m easy to reach by email, phone, or LinkedIn.
           </p>
 
           {/* Main Contact Card */}
@@ -94,14 +94,15 @@ export const Contact = () => {
 
                 <a
                   href="mailto:samardotexe@gmail.com"
-                  className="inline-flex items-center gap-2 text-2xl md:text-3xl font-bold text-foreground hover:text-primary transition-colors duration-300"
+                  className="inline-flex max-w-full items-center gap-3 break-all text-xl font-bold text-foreground hover:text-primary transition-colors duration-300 md:text-3xl"
                 >
+                  <Mail className="hidden h-7 w-7 flex-shrink-0 text-primary sm:block" />
                   samardotexe@gmail.com
                   <ExternalLink className="h-5 w-5 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </a>
 
                 <p className="text-sm text-muted-foreground">
-                  I try to respond within 24 hours
+                  Phone: <a href="tel:+919997015785" className="text-foreground hover:text-primary">+91 9997015785</a>
                 </p>
               </div>
             </div>
@@ -122,12 +123,13 @@ export const Contact = () => {
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`group relative p-4 rounded-xl border border-primary/10 bg-card/50 hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 backdrop-blur-sm overflow-hidden`}
+                    className={`group relative inline-flex items-center gap-2 rounded-lg border border-primary/10 bg-card/50 px-5 py-3 hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 backdrop-blur-sm overflow-hidden`}
                   >
                     {/* Background gradient */}
                     <div className={`absolute inset-0 -z-10 opacity-0 group-hover:opacity-10 transition-opacity duration-300 bg-gradient-to-br ${link.color} to-transparent`} />
                     
                     <Icon className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors duration-300" />
+                    <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground">{link.label}</span>
                   </a>
                 )
               })}
@@ -136,19 +138,31 @@ export const Contact = () => {
 
           {/* CTA Button */}
           <div className="mt-16">
-            <Button
-              size="lg"
-              className="rounded-full px-10 bg-gradient-to-r from-primary to-primary/80 hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 text-base"
-              asChild
-            >
-              <a href="mailto:samardotexe@gmail.com">
-                <Mail className="mr-2 h-5 w-5" />
-                Send me an email
-              </a>
-            </Button>
+            <div className="flex flex-wrap justify-center gap-3">
+              <Button
+                size="lg"
+                className="rounded-full px-8 bg-gradient-to-r from-primary to-primary/80 hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 text-base"
+                asChild
+              >
+                <a href="mailto:samardotexe@gmail.com">
+                  <Mail className="mr-2 h-5 w-5" />
+                  Send email
+                </a>
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="rounded-full px-8 border-primary/30 hover:border-primary hover:bg-primary/5"
+                asChild
+              >
+                <a href="/samarcv.pdf" target="_blank" rel="noopener noreferrer">
+                  <FileText className="mr-2 h-5 w-5" />
+                  Resume
+                </a>
+              </Button>
+            </div>
           </div>
 
-          {/* Availability */}
           <p className="mt-12 text-sm text-muted-foreground">
             Available for internships, collaborations, and exciting projects.
           </p>

@@ -1,6 +1,13 @@
 import { Button } from '@/components/ui/button'
-import { Mail, Github, ExternalLink, ArrowRight } from 'lucide-react'
+import { Mail, Linkedin, Github, ArrowRight, FileText } from 'lucide-react'
 import { useEffect, useState } from 'react'
+
+const subtitles = [
+  "Full Stack Developer",
+  "Content Creator",
+  "AI Workflow Builder",
+  "Creative Researcher"
+]
 
 export const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false)
@@ -8,13 +15,6 @@ export const Hero = () => {
   useEffect(() => {
     setIsLoaded(true)
   }, [])
-
-  const subtitles = [
-    "Backend Engineer & Product Builder",
-    "AI-Powered Systems Designer",
-    "Full Stack Developer",
-    "Startup-Minded Engineer"
-  ]
 
   const [currentSubtitle, setCurrentSubtitle] = useState(0)
 
@@ -36,14 +36,24 @@ export const Hero = () => {
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full filter blur-3xl animate-pulse" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary/5 rounded-full filter blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
         {/* Grid pattern */}
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;utf8,<svg width=\"100\" height=\"100\" xmlns=\"http://www.w3.org/2000/svg\"><defs><pattern id=\"grid\" width=\"100\" height=\"100\" patternUnits=\"userSpaceOnUse\"><path d=\"M 100 0 L 0 0 0 100\" fill=\"none\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\"/></pattern></defs><rect width=\"100%\" height=\"100%\" fill=\"url(%23grid)\" /></svg>')]" />
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage:
+              'linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)',
+            backgroundSize: '100px 100px',
+          }}
+        />
       </div>
 
-      <div className={`max-w-5xl w-full text-center space-y-8 transform transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+      <div className={`max-w-4xl w-full text-center space-y-8 transform transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         {/* Small badge */}
-        <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/5 backdrop-blur-sm transform transition-all duration-1000 ${isLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
-          <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-          <span className="text-xs font-medium text-primary">Welcome to my portfolio</span>
+        <div className={`inline-flex items-center gap-3 px-4 py-2 rounded-full border border-primary/30 bg-primary/5 backdrop-blur-sm shadow-[0_0_40px_hsl(180,100%,50%,0.12)] transform transition-all duration-1000 ${isLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
+          <span className="relative flex h-2 w-2">
+            <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-75 animate-ping" />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
+          </span>
+          <span className="text-xs font-medium text-primary">Full-stack development, content, and AI curiosity</span>
         </div>
 
         {/* Main Name */}
@@ -77,9 +87,9 @@ export const Hero = () => {
 
         {/* Description */}
         <div className={`transform transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '300ms' }}>
-          <p className="max-w-3xl mx-auto text-base md:text-lg text-muted-foreground leading-relaxed">
-            I build scalable backend systems, integrate AI workflows, and create products that matter. 
-            Passionate about clean code, automation, and solving complex engineering challenges.
+          <p className="max-w-2xl mx-auto text-base md:text-lg text-muted-foreground leading-relaxed">
+            I build dynamic web applications, create useful content, and keep learning across
+            full-stack development, AI, research, and visual storytelling.
           </p>
         </div>
 
@@ -96,29 +106,23 @@ export const Hero = () => {
             </a>
           </Button>
 
-          <Button
-            size="lg"
-            variant="outline"
-            className="rounded-full px-8 border-primary/30 hover:border-primary hover:bg-primary/5"
-            asChild
-          >
-            <a href="mailto:samardotexe@gmail.com">
-              <Mail className="mr-2 h-4 w-4" />
-              Get In Touch
-            </a>
-          </Button>
-
-          <Button
-            size="lg"
-            variant="outline"
-            className="rounded-full px-8 border-primary/30 hover:border-primary hover:bg-primary/5"
-            asChild
-          >
-            <a href="https://github.com/samar2341" target="_blank" rel="noopener noreferrer">
-              <Github className="mr-2 h-4 w-4" />
-              GitHub
-            </a>
-          </Button>
+          {[
+            { href: 'mailto:samardotexe@gmail.com', label: 'Email', Icon: Mail },
+            { href: '/samarcv.pdf', label: 'Resume', Icon: FileText },
+          ].map(({ href, label, Icon }) => (
+            <Button
+              key={label}
+              size="lg"
+              variant="outline"
+              className="rounded-full px-7 border-primary/30 hover:border-primary hover:bg-primary/5"
+              asChild
+            >
+              <a href={href} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}>
+                <Icon className="mr-2 h-4 w-4" />
+                {label}
+              </a>
+            </Button>
+          ))}
         </div>
 
         {/* Scroll hint */}
