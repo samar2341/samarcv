@@ -1,68 +1,90 @@
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail, Twitter, ExternalLink } from 'lucide-react';
 
 export const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="border-t border-border bg-background">
-      <div className="container mx-auto px-4 py-20">
+    <footer className="relative border-t border-primary/10 bg-gradient-to-b from-background to-primary/5">
+      <div className="container mx-auto px-4 py-16 md:py-20">
         
         {/* Top Section */}
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           
-          {/* Left – About */}
-          <div className="space-y-4 text-left">
-            <h3 className="text-lg font-semibold">Samar</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed max-w-md">
-              Full-stack developer focused on building clean, performant, and
-              user-friendly web experiences. Interested in open-source,
-              design systems, and scalable products.
+          {/* Left – Brand & About */}
+          <div className="space-y-4">
+            <h3 className="text-2xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+              Samar
+            </h3>
+            <p className="text-sm text-muted-foreground leading-relaxed max-w-sm">
+              Backend engineer & product builder crafting scalable systems with AI integration. 
+              Building the future, one line of code at a time.
             </p>
+            <div className="pt-2">
+              <p className="text-xs text-primary font-semibold">Building modern digital systems.</p>
+            </div>
           </div>
 
-          {/* Right – Contact */}
-          <div className="space-y-4 md:text-left">
-            <h4 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">
+          {/* Middle – Links */}
+          <div className="space-y-4">
+            <h4 className="text-sm font-semibold uppercase tracking-wide text-foreground">
+              Navigation
+            </h4>
+            <div className="space-y-2">
+              {[
+                { label: 'About', href: '#about' },
+                { label: 'Experience', href: '#experience' },
+                { label: 'Projects', href: '#projects' },
+                { label: 'Contact', href: '#contact' },
+              ].map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-300"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Right – Social Links */}
+          <div className="space-y-4">
+            <h4 className="text-sm font-semibold uppercase tracking-wide text-foreground">
               Connect
             </h4>
 
-            <div className="flex md:justify-start gap-4">
-              <a
-                href="https://github.com/samar2341"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-4 rounded-md border border-border hover:border-primary hover:text-primary transition-colors"
-                aria-label="GitHub"
-              >
-                <Github className="h-4 w-4" />
-              </a>
-
-              <a
-                href="https://linkedin.com/in/samar2341"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-4 rounded-md border border-border hover:border-primary hover:text-primary transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="h-4 w-4" />
-              </a>
-
-              <a
-                href="mailto:yourmail@gmail.com"
-                className="p-4 rounded-md border border-border hover:border-primary hover:text-primary transition-colors"
-                aria-label="Email"
-              >
-                <Mail className="h-4 w-4" />
-              </a>
+            <div className="flex gap-3">
+              {[
+                { Icon: Github, href: 'https://github.com/samar2341', label: 'GitHub' },
+                { Icon: Linkedin, href: 'https://linkedin.com/in/samar2341', label: 'LinkedIn' },
+                { Icon: Mail, href: 'mailto:samardotexe@gmail.com', label: 'Email' },
+                { Icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
+              ].map((item, idx) => (
+                <a
+                  key={idx}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 rounded-lg border border-primary/10 hover:border-primary/30 bg-card/50 hover:bg-card transition-all duration-300 group"
+                  aria-label={item.label}
+                >
+                  <item.Icon className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                </a>
+              ))}
             </div>
           </div>
         </div>
 
+        {/* Divider */}
+        <div className="border-t border-primary/10 my-8" />
+
         {/* Bottom Bar */}
-        <div className="mt-14 pt-6 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
           <span>
-            © {new Date().getFullYear()} Samar. All rights reserved.
+            © {currentYear} Samar. All rights reserved.
           </span>
           <span>
-            Designed &amp; Built by Samar
+            Designed &amp; Built with React &amp; Tailwind
           </span>
         </div>
       </div>

@@ -1,49 +1,105 @@
 import { Button } from '@/components/ui/button'
-import { Mail, FileText, ArrowRight } from 'lucide-react'
+import { Mail, Github, ExternalLink, ArrowRight } from 'lucide-react'
+import { useEffect, useState } from 'react'
 
 export const Hero = () => {
+  const [isLoaded, setIsLoaded] = useState(false)
+
+  useEffect(() => {
+    setIsLoaded(true)
+  }, [])
+
+  const subtitles = [
+    "Backend Engineer & Product Builder",
+    "AI-Powered Systems Designer",
+    "Full Stack Developer",
+    "Startup-Minded Engineer"
+  ]
+
+  const [currentSubtitle, setCurrentSubtitle] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSubtitle((prev) => (prev + 1) % subtitles.length)
+    }, 4000)
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center bg-background px-6 overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center bg-background px-6 overflow-hidden pt-20"
     >
-      {/* Background subtle lines */}
-      <div className="absolute inset-0 -z-10 opacity-20">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.06),transparent_60%)]" />
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        {/* Gradient orbs */}
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full filter blur-3xl animate-pulse" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary/5 rounded-full filter blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
+        {/* Grid pattern */}
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;utf8,<svg width=\"100\" height=\"100\" xmlns=\"http://www.w3.org/2000/svg\"><defs><pattern id=\"grid\" width=\"100\" height=\"100\" patternUnits=\"userSpaceOnUse\"><path d=\"M 100 0 L 0 0 0 100\" fill=\"none\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\"/></pattern></defs><rect width=\"100%\" height=\"100%\" fill=\"url(%23grid)\" /></svg>')]" />
       </div>
 
-      <div className="max-w-5xl text-center space-y-8">
-        {/* Name */}
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold">
-          Samarr
-        </h1>
+      <div className={`max-w-5xl w-full text-center space-y-8 transform transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        {/* Small badge */}
+        <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/5 backdrop-blur-sm transform transition-all duration-1000 ${isLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
+          <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+          <span className="text-xs font-medium text-primary">Welcome to my portfolio</span>
+        </div>
 
-        {/* Title */}
-        <p className="text-xl md:text-2xl text-muted-foreground font-medium">
-          Full-Stack Developer & Creative Technologist
-        </p>
+        {/* Main Name */}
+        <div className={`transform transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '100ms' }}>
+          <h1 className="text-7xl md:text-8xl lg:text-9xl font-bold tracking-tight">
+            <span className="bg-gradient-to-r from-white via-primary to-white bg-clip-text text-transparent">
+              Samar
+            </span>
+          </h1>
+        </div>
+
+        {/* Animated Subtitle */}
+        <div className={`h-16 flex items-center justify-center transform transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '200ms' }}>
+          <div className="relative w-full">
+            <p className="text-xl md:text-2xl lg:text-3xl text-muted-foreground font-medium h-8 flex items-center justify-center">
+              <span className={`transition-all duration-500 inline-block ${currentSubtitle === 0 ? 'opacity-100' : 'opacity-0 absolute'}`}>
+                {subtitles[0]}
+              </span>
+              <span className={`transition-all duration-500 inline-block ${currentSubtitle === 1 ? 'opacity-100' : 'opacity-0 absolute'}`}>
+                {subtitles[1]}
+              </span>
+              <span className={`transition-all duration-500 inline-block ${currentSubtitle === 2 ? 'opacity-100' : 'opacity-0 absolute'}`}>
+                {subtitles[2]}
+              </span>
+              <span className={`transition-all duration-500 inline-block ${currentSubtitle === 3 ? 'opacity-100' : 'opacity-0 absolute'}`}>
+                {subtitles[3]}
+              </span>
+            </p>
+          </div>
+        </div>
 
         {/* Description */}
-        <p className="max-w-3xl mx-auto text-muted-foreground leading-relaxed">
-          I build digital experiences that are clean, purposeful, and
-          user-focused — blending technology, creativity, and real-world
-          problem solving.
-        </p>
+        <div className={`transform transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '300ms' }}>
+          <p className="max-w-3xl mx-auto text-base md:text-lg text-muted-foreground leading-relaxed">
+            I build scalable backend systems, integrate AI workflows, and create products that matter. 
+            Passionate about clean code, automation, and solving complex engineering challenges.
+          </p>
+        </div>
 
-        {/* Buttons */}
-        <div className="flex flex-wrap justify-center gap-4 pt-6">
+        {/* CTA Buttons */}
+        <div className={`flex flex-wrap justify-center gap-4 pt-6 transform transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '400ms' }}>
           <Button
             size="lg"
-            variant="outline"
-            className="rounded-full px-6"
+            className="rounded-full px-8 bg-gradient-to-r from-primary to-primary/80 hover:shadow-lg hover:shadow-primary/50 transition-all duration-300"
+            asChild
           >
-            View My Work
-            <ArrowRight className="ml-2 h-4 w-4" />
+            <a href="#projects">
+              View My Work
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </a>
           </Button>
 
           <Button
             size="lg"
-            className="rounded-full px-6"
+            variant="outline"
+            className="rounded-full px-8 border-primary/30 hover:border-primary hover:bg-primary/5"
             asChild
           >
             <a href="mailto:samardotexe@gmail.com">
@@ -55,20 +111,26 @@ export const Hero = () => {
           <Button
             size="lg"
             variant="outline"
-            className="rounded-full px-6"
+            className="rounded-full px-8 border-primary/30 hover:border-primary hover:bg-primary/5"
             asChild
           >
-            <a href="/samarcv.pdf" target="_blank" rel="noopener noreferrer">
-              <FileText className="mr-2 h-4 w-4" />
-              View Resume
+            <a href="https://github.com/samar2341" target="_blank" rel="noopener noreferrer">
+              <Github className="mr-2 h-4 w-4" />
+              GitHub
             </a>
           </Button>
         </div>
 
         {/* Scroll hint */}
-        <p className="pt-10 text-sm text-muted-foreground">
-          Scroll to explore
-        </p>
+        <div className={`pt-10 transform transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '500ms' }}>
+          <div className="flex justify-center">
+            <div className="animate-bounce">
+              <svg className="w-6 h-6 text-primary/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+              </svg>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   )
